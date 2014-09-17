@@ -1,0 +1,175 @@
+p {
+	margin: 0px!important;
+}
+
+#head {
+	background: url('../../etc/headbg.jpg') no-repeat center center;
+	background-color: #ccc;
+	background-size: cover;
+	height: 500px;
+}
+
+#status {
+	font-size: 3em;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 1.5em;
+}
+
+#fb-login {
+	margin: 2em auto 0 auto;
+	text-align: center;
+	width: 142px;
+}
+
+#search {
+	padding: 6em 0 0 0;
+	color: #EEE;
+	position: absolute;
+	bottom: 10em;
+	left: 0;
+	right: 0;
+}
+
+#search-btn {
+	margin: 1em auto;
+	width: 100px;
+}
+
+#colored {
+	color: #0B4366;
+}
+
+/****** recent ******/
+#recent {
+	border-top: solid 25px #78BECC;
+	padding-top: 2em;
+}
+
+#recent > .row > div > div {
+	height: 350px;
+	border: solid 10px #FFF;
+	box-sizing: border-box;
+	background-color: #F2F2F2;
+	border-radius: 15px;
+
+}
+
+.single-post:hover {
+	color: #08839C!important;
+	cursor: pointer;
+}
+
+.block1 {
+	border-top-right-radius: 5px;
+	background-color: #C0E8F0;
+	border-bottom: dashed 2px #46ADC2;
+}
+
+.block2 {
+	background-color: #C0E8F0;
+	border-top-right-radius: 5px;
+}
+
+.block3 {
+	background-color: #C0E8F0;
+	border-top-left-radius: 5px;
+	border-bottom: dashed 2px #46ADC2;
+}
+
+.block4 {
+	
+	background-color: #C0E8F0;
+	border-top-left-radius: 5px;
+
+}
+
+.block2, .block1, .block3, .block4 {
+	
+	font-size: 1.4em;
+	font-weight: 500;
+	text-align: left;
+	height: 50px;
+	padding-top: 0.4em;
+}
+
+.more-info > p > span, .time-info > p > span {
+	font-weight: 700;
+}
+
+.more-info {
+	padding-top: 1em;
+	font-size: 1em;
+}
+
+.more-info div {
+	padding: 0px;
+}
+
+.profile-photo img {
+	border-radius: 100%;
+	position: absolute;
+	right: 0em;
+	top: 0em;
+}
+
+
+
+/****** add new / forms ******/
+
+#addnew {
+}
+
+#addnewform {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+textarea {
+	resize: none;
+}
+
+input[type='submit'] {
+	margin-top: 1em;
+}
+
+input[type='checkbox'] {
+	  /* Double-sized Checkboxes */
+	  transform: scale(1.2);
+	  -ms-transform: scale(1.2); /* IE */
+	  -moz-transform: scale(1.2); /* FF */
+	  -webkit-transform: scale(1.2,1.2); /* Safari and Chrome */
+	  -o-transform: scale(1.2); /* Opera */
+	  margin: 0 10px 10px 10px;
+} 
+
+label {
+	margin-top: 5px;
+}
+
+/****** top search bar ******/
+
+#top-bar {
+	padding: 1em;
+	background-color: rgba(112, 182, 196, 0.3);
+}
+
+#top-search input[type="text"] {
+	width: 120px;
+	padding: 5px;
+	border-radius: 4px;
+	border: solid 1px #BBB;
+} 
+
+#top-search input[type="submit"] {
+	margin: 0px;
+}
+
+#top-bar ul {
+	list-style: none;
+}
+
+#top-bar ul li {
+	display: inline-block;
+	margin: 0 1em;
+}
