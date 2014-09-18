@@ -44,13 +44,15 @@
 				<?php for($i=0 ; $i < count($recent = getRecent()) ; $i++ ) : ?>
 					<div class="col-sm-6 col-md-4 col-lg-3 single-post">
 
-						<div class="row" class="main-info">
+						<div class="row from">
 							<div class="col-xs-4 block3">
 								FROM: 
 							</div>
 							<div class="col-xs-8 block1">
 								<?php echo $recent[$i]->origin ; ?>
 							</div>
+						</div>
+						<div class="row to">
 							<div class="col-xs-4 block4">
 								TO:
 							</div>

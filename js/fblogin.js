@@ -93,7 +93,6 @@ function valueAssign() {
 function userExists() {
   
   FB.api('/me', function(response) {
-    alert(response.phone);
     var formData = {id: response.id, name : response.name, email : response.email, phone: parseInt(response.mobile_phone)};
     $.ajax({  type : "POST",   
               url : "checkUser.php",   

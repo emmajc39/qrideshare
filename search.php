@@ -13,13 +13,21 @@ $results = search($origin, $destination, $date);
 				<?php for($i=0 ; $i < count($results = search($origin, $destination, $date)) ; $i++ ) : ?>
 					<div class="col-sm-6 col-md-4 col-lg-3 single-post">
 
-						<div class="row" class="main-info">
-							<div class="col-xs-12 block1">
-								<?php echo 'From: '. $results[$i]->origin ; ?>
+						<div class="row from">
+							<div class="col-xs-4 block3">
+								FROM: 
 							</div>
-						
-							<div class="col-xs-12 block2">
-								<?php echo 'To: ' . $results[$i]->destination ; ?>
+							<div class="col-xs-8 block1">
+								<?php echo $recent[$i]->origin ; ?>
+							</div>
+						</div>
+						<div class="row to">
+							<div class="col-xs-4 block4">
+								TO:
+							</div>
+							<div class="col-xs-8 block2">
+								
+								<?php echo $recent[$i]->destination ; ?>
 							</div>
 						</div>
 						<div class="row">
