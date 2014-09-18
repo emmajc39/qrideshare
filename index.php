@@ -3,7 +3,16 @@
 <!-- index page -->
 
 <?php startblock('body');?>
+
 <div class="container-fluid" id="head">
+	<div class="top-bar2" id="frontpage-bar">
+
+
+		<span><i class="fa fa-edit"></i> Manage Posts</span>
+
+	</div>
+
+
 	<div id="top-banner">
 		<span></span>
 	</div>

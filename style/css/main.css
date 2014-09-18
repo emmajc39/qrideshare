@@ -168,6 +168,20 @@ label {
 	background-color: rgba(112, 182, 196, 0.3);
 }
 
+
+.top-bar2 {
+	padding: 1em 5em 1em 0em;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	margin: 0 -15px;
+	text-align: right;
+}
+
+#frontpage-bar {
+	display: none;
+}
+
 #top-search input[type="text"] {
 	width: 120px;
 	padding: 5px;

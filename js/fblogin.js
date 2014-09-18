@@ -16,11 +16,14 @@ function statusChangeCallback(response) {
     // The person is logged into Facebook, but not your app.
     document.getElementById('status').innerHTML = 'Please log ' +
       'into this app.';
+      valueHide();
+    
   } else {
     // The person is not logged into Facebook, so we're not sure if
     // they are logged into this app or not.
     document.getElementById('status').innerHTML = 'Please log in ' +
       'with Facebook.';
+    valueHide();
   }
 }
 
@@ -84,11 +87,16 @@ function testAPI() {
 // Get the user's face book id number and enter it into the form;
 function valueAssign() {
   FB.api('/me', function(response) {
+    document.getElementById('frontpage-bar').style.display = 'block';
     document.getElementById('post-owner').value = response.id;
     document.getElementById('email').value = response.email;
     console.log(response.id);
   });  
 };
+
+function valueHide() {
+  document.getElementById('frontpage-bar').style.display = 'none';
+}
 
 function userExists() {
   
