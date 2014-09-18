@@ -11,6 +11,7 @@ function statusChangeCallback(response) {
     // Logged into your app and Facebook.
     testAPI();
     valueAssign();
+    userExists();
   } else if (response.status === 'not_authorized') {
     // The person is logged into Facebook, but not your app.
     document.getElementById('status').innerHTML = 'Please log ' +
@@ -87,4 +88,17 @@ function valueAssign() {
     document.getElementById('email').value = response.email;
     console.log(response.id);
   });  
+};
+
+function userExists() {
+  
+  FB.api('/me', function(response) {
+    alert(response.phone);
+    var formData = {id: response.id, name : response.name, email : response.email, phone: parseInt(response.mobile_phone)};
+    $.ajax({  type : "POST",   
+              url : "checkUser.php",   
+              data : formData,
+              async: false,
+    });
+  });
 };

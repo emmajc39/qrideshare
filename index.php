@@ -9,7 +9,7 @@
 	</div>
 	<div id="status"></div>
 	<div id="fb-login">
-		<div class="fb-login-button" scope="public_profile,email" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin="checkLoginState();"></div>
+		<div class="fb-login-button btn" scope="public_profile,email" perms="user_mobile_phone" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin="checkLoginState();"></div>
 	</div>
 	<form class="ui-widget" id="search" action="search.php" method="GET">
 		<div class="container-fluid">
