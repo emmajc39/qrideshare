@@ -68,7 +68,7 @@ require_once "ti.php";
 		<div id="top-bar">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-8 col-xs-12">
+					<div class="col-sm-12 col-md-6 col-xs-12">
 						<div id="top-search">
 							<form action="./search.php" method="GET">
 								<input type="text" name="orig" id="orig" placeholder="From" />
@@ -78,21 +78,17 @@ require_once "ti.php";
 							</form>
 						</div>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-6">
 						<ul>
-							<li>
-								<div id="log-in-out">
-									Home
-								</div>
-							</li>
-							<li>
-								<div id="log-in-out">
-									Log In
-								</div>
-							</li>
+
 							<li>
 								<div id="manage">
-									Manage Posts
+									<i class="fa fa-edit"></i> Manage Posts
+								</div>
+							</li>
+							<li>
+								<div id="log-in-out">
+									<i class="fa fa-home"></i> Home
 								</div>
 							</li>
 						</ul>

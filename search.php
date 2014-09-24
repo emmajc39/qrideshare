@@ -18,7 +18,7 @@ $results = search($origin, $destination, $date);
 								FROM: 
 							</div>
 							<div class="col-xs-8 block1">
-								<?php echo $recent[$i]->origin ; ?>
+								<?php echo $results[$i]->origin ; ?>
 							</div>
 						</div>
 						<div class="row to">
@@ -27,7 +27,7 @@ $results = search($origin, $destination, $date);
 							</div>
 							<div class="col-xs-8 block2">
 								
-								<?php echo $recent[$i]->destination ; ?>
+								<?php echo $results[$i]->destination ; ?>
 							</div>
 						</div>
 						<div class="row">
@@ -40,10 +40,10 @@ $results = search($origin, $destination, $date);
 									<?php echo $results[$i]->ridetime ; ?>
 									<br/>
 								</div>
-								<!-- profile picture
+								<!--profile picture
 								<div class="col-xs-6">
 									<div class="profile-photo">
-										<img src=<?php echo 'https://graph.facebook.com/'.$recent[$i]->owner.'/picture?height=70&width=70' ; ?> />
+										<img src=<?php echo 'https://graph.facebook.com/'.$results[$i]->owner.'/picture?height=70&width=70' ; ?> />
 									</div>
 								</div>
 								-->

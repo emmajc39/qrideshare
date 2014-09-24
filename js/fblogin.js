@@ -12,6 +12,7 @@ function statusChangeCallback(response) {
     testAPI();
     valueAssign();
     userExists();
+    document.getElementById('frontpage-bar').style.display = 'block';
   } else if (response.status === 'not_authorized') {
     // The person is logged into Facebook, but not your app.
     document.getElementById('status').innerHTML = 'Please log ' +
@@ -87,7 +88,6 @@ function testAPI() {
 // Get the user's face book id number and enter it into the form;
 function valueAssign() {
   FB.api('/me', function(response) {
-    document.getElementById('frontpage-bar').style.display = 'block';
     document.getElementById('post-owner').value = response.id;
     document.getElementById('email').value = response.email;
     console.log(response.id);
