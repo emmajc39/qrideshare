@@ -11,6 +11,12 @@
 			<form action="action/add.php" method="POST" ?>
 				<div class="row">
 					<div class="col-xs-8">
+						<label>Post Type:</label>
+						<select type="text" name="type" class="form-control" required>
+							<option value="offering">Offering</option>
+							<option value="wanted">Wanted</option>
+						</select>
+
 						<label>Departure Location:</label>
 						<input type="text" name="orig" id="orig" class="form-control" required />
 

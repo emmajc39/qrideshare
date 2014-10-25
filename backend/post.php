@@ -15,8 +15,9 @@ class Post
 	public $description;
 	public $email;
 	public $message;
+	public $type;
 	
-	function __construct($owner=NULL, $ridedate=NULL, $ridetime=NULL, $origin=NULL, $destination=NULL, $description=NULL, $email=NULL, $phone=NULL){
+	function __construct($owner=NULL, $ridedate=NULL, $ridetime=NULL, $origin=NULL, $destination=NULL, $description=NULL, $email=NULL, $phone=NULL, $type=NULL){
 		$this->owner = $owner;
 		$this->ridedate = $ridedate;
 		$this->origin = $origin;
@@ -24,8 +25,9 @@ class Post
 		$this->description = $description;
 		$this->email = $email;
 		$this->phone = $phone;
+		$this->type = $type;
 		$DBH = getConn();
-		$SMT = $DBH->prepare("INSERT INTO posts (owner, ridedate, ridetime, origin, destination, description, email, phone) VALUES (:owner, :ridedate, :ridetime, :origin, :destination, :description, :email, :phone)");
+		$SMT = $DBH->prepare("INSERT INTO posts (owner, ridedate, ridetime, origin, destination, description, email, phone, type) VALUES (:owner, :ridedate, :ridetime, :origin, :destination, :description, :email, :phone, :type)");
 		$SMT->bindParam(':owner', $owner);
 		$SMT->bindParam(':ridedate', $ridedate);
 		$SMT->bindParam(':ridetime', $ridetime);
@@ -34,6 +36,7 @@ class Post
 		$SMT->bindParam(':description', $description);
 		$SMT->bindParam(':email', $email);
 		$SMT->bindParam(':phone', $phone);
+		$SMT->bindParam(':type', $type);
 		$SMT->execute();
 		$DBH = null;
 	}

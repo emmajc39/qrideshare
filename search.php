@@ -3,57 +3,65 @@ require 'init2.php';
 $origin = $_GET['orig'];
 $destination = $_GET['dest'];
 $date = $_GET['date'];
-$results = search($origin, $destination, $date);
+$type = $_GET['type'];
+$results = search($origin, $destination, $date, $type);
 ?>
 <?php startblock('body') ?>
 <div class="container-fluid" id="recent">
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1">
-			<?php if (count(search($origin, $destination, $date)) > 0 && NULL != search($origin, $destination, $date) )  : ?>
-				<?php for($i=0 ; $i < count($results = search($origin, $destination, $date)) ; $i++ ) : ?>
-					<div class="col-sm-6 col-md-4 col-lg-3 single-post">
+			<?php if (count($results) > 0 && NULL != $results )  : ?>
+				<?php for($i=0 ; $i < count($results) ; $i++ ) : ?>
+					<div class="col-sm-12 single-post <?php 
+					if ($results[$i]->type == 'wanted') {
+							echo "wanted";
+						} else {
+							echo "offering";
+						}
+					?>">
 
-						<div class="row from">
-							<div class="col-xs-4 block3">
-								FROM: 
-							</div>
-							<div class="col-xs-8 block1">
-								<?php echo $results[$i]->origin ; ?>
-							</div>
-						</div>
-						<div class="row to">
-							<div class="col-xs-4 block4">
-								TO:
-							</div>
-							<div class="col-xs-8 block2">
-								
-								<?php echo $results[$i]->destination ; ?>
-							</div>
-						</div>
 						<div class="row">
-							<div class="col-xs-12 more-info">
-								<div class="col-xs-12 time-info">
-									<p><span>Ride Date: </span></p>
-									<?php echo $results[$i]->ridedate ; ?>
-									<br/>
-									<p><span>Ride Time: </span></p>
-									<?php echo $results[$i]->ridetime ; ?>
-									<br/>
-								</div>
-								<!--profile picture
-								<div class="col-xs-6">
-									<div class="profile-photo">
-										<img src=<?php echo 'https://graph.facebook.com/'.$results[$i]->owner.'/picture?height=70&width=70' ; ?> />
+									<div class="col-xs-4 block">
+										<?php echo strtoupper($results[$i]->type) ; ?>
+									</div>
+									<div class="col-xs-4 block">
+										<?php echo "FROM: ".$results[$i]->origin; ?>
+									</div>
+									<div class="col-xs-4 block">
+										<?php echo "TO: ".$results[$i]->destination ; ?>
 									</div>
 								</div>
-								-->
+						<div class="row info">
+							<div class="col-sm-3 col-xs-4">
+								<div class="profile-photo">
+									<img src=<?php echo 'https://graph.facebook.com/'.$results[$i]->owner.'/picture?height=100&width=100' ; ?> />
 
+									<p class="username"><?php $user = getUserByID($results[$i]->owner);
+											$username = $user['name'];
+											echo $username;
+									?></p>
+								</div>
+									
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12 more-info">
-								<p><span>Description: </span></p>
-								<?php echo $results[$i]->description ; ?>
+							<div class="col-sm-9 col-xs-8">
+								<div class="row">
+									<div class="col-xs-12 more-info">
+										<div class="col-xs-12 time-info">
+											<span><i class="fa fa-calendar"></i> Ride Date: </span>
+											<?php echo $results[$i]->ridedate ; ?>
+											<br/>
+											<span><i class="fa fa-clock-o"></i> Ride Time: </span>
+											<?php echo $results[$i]->ridetime ; ?>
+										</div>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-xs-12 more-info">
+										<p><span>Description: </span></p>
+										<?php echo getShortDesc($results[$i]->description) ; ?>
+									</div>
+								</div>
 							</div>
 						</div>
 						

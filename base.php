@@ -16,7 +16,13 @@ function getConn(){//returns PDO connection object.
 		return false;
 	}
 }
-function search($origin = '%', $destination= '%', $date){
+function search($origin, $destination, $date, $type){
+	if (!isset($origin) || $origin == "" ) {
+		$origin = '%';
+	}
+	if (!isset($destination) || $destination == "" ) {
+		$destination = '%';
+	}
 	$origin = strtolower($origin);
 	$destination = strtolower($destination);
 	
@@ -24,10 +30,16 @@ function search($origin = '%', $destination= '%', $date){
 		$date = date('Y-m-d', strtotime($date));
 	} else {
 		$date = '%';
-
 	}
+	
 	$DBH = getConn();
-	$SMT = $DBH->query("SELECT * FROM posts WHERE origin LIKE '$origin' AND destination LIKE '$destination' AND ridedate LIKE '$date'");
+
+	if ($type == 'all') {
+		$SMT = $DBH->query("SELECT * FROM posts WHERE origin LIKE '$origin' AND destination LIKE '$destination' AND ridedate LIKE '$date'");
+	}
+	else {
+		$SMT = $DBH->query("SELECT * FROM posts WHERE origin LIKE '$origin' AND destination LIKE '$destination' AND ridedate LIKE '$date' AND type LIKE '$type'");
+	}
 	//$SMT->bindValue(":origin", $origin);
 	//$SMT->bindValue(":destination", $destination);
 	//$SMT->bindValue(":date", $date);
@@ -43,7 +55,7 @@ function search($origin = '%', $destination= '%', $date){
 
 function getRecent() {
 	$DBH = getConn();
-    $SMT = $DBH->query("SELECT * FROM posts ORDER BY dateadded DESC LIMIT 20");
+    $SMT = $DBH->query("SELECT * FROM posts ORDER BY dateadded DESC LIMIT 40");
     $results=array();
     if($SMT->execute()){
 	$results = $SMT->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Post");
@@ -74,6 +86,15 @@ function decode($data)
 	$data = preg_replace('/(?:(?:\r\n|\r|\n)\s*){2}/s', '<br/>', $data);
 	return $data;
 } 
+
+function getUserByID ($id) {
+	$DBH = getConn();
+    $SMT = $DBH->query("SELECT * FROM users WHERE id = $id ");
+    if($SMT->execute()){
+    	$result = $SMT->fetchAll();
+    }
+    return $result[0];
+}
 
 
 ?>

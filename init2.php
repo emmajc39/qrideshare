@@ -66,37 +66,33 @@ require_once "ti.php";
 
 		<!-- include a header that shows up on every page except for the main page -->
 		<div id="top-bar">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 col-md-6 col-xs-12">
-						<div id="top-search">
-							<form action="./search.php" method="GET">
-								<input type="text" name="orig" id="orig" placeholder="From" />
-								<input type="text" name="dest" id="dest" placeholder="To" />
-								<input type="text" name="date" id="datepicker2" placeholder="YYYY/MM/DD"/>
-								<input type="submit" name="submit" value="SEARCH" class="btn">
-							</form>
+			<ul>
+					<li>
+						<div id="manage">
+							<i class="fa fa-edit"></i> Manage Posts
 						</div>
-					</div>
-					<div class="col-sm-6">
-						<ul>
-
-							<li>
-								<div id="manage">
-									<i class="fa fa-edit"></i> Manage Posts
-								</div>
-							</li>
-							<li>
-								<div id="log-in-out">
-									<i class="fa fa-home"></i> Home
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+					</li>
+					<li>
+						<div id="log-in-out">
+							<a href="./index.php"><i class="fa fa-home"></i> Home </a>
+						</div>
+					</li>
+			</ul>
 		</div>
-
+		<div class="search2">
+				<form class="ui-widget" id="search" action="search.php" method="GET">
+					<input type="text" name="orig" id="orig" class="form-field form-field1" placeholder="Departure Location" /
+					><input typle="text" name="dest" id="dest" class="form-field form-field1" placeholder="Destination"/
+					><input type="text" name="date" class="form-field form-field2" id="datepicker" placeholder="Date of Trip"
+					><div class="select">
+						<select type="text" name="type" class="form-field form-field3 type">
+							<option value="all">All</option>
+							<option value="offering">Offering</option>
+							<option value="wanted">Wanted</option>
+						</select></div
+					><input type="submit" name="submit" value="SEARCH"  class="form-field form-field3 button" />
+				</form>
+			</div>
 		<!-- includes main body content -->
 		<?php emptyblock('body') ?>
 		

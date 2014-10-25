@@ -27,9 +27,10 @@ FacebookSession::setDefaultApplication('299786516892944', 'a5f47d859feab6b62a7cf
 
 	<head>
 		<title>Queen's Ride Share</title>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:900,300,100,700,500,400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="style/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="style/font-awesome/fonts/FontAwesome.otf">
 		<link rel="stylesheet" type="text/css" href="style/css/main.css"/>
 		<link rel="stylesheet" href="style/jquery-ui/jquery-ui.css">
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -75,6 +76,29 @@ FacebookSession::setDefaultApplication('299786516892944', 'a5f47d859feab6b62a7cf
 		<!-- script for fb login -->
 		<script type="text/javascript" src="js/fblogin.js"></script>
 		<!-- /script for fb login -->
+		<!--
+		<div id="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-6">
+						<ul>
+
+							<li>
+								<div id="manage">
+									<i class="fa fa-edit"></i> Manage Posts
+								</div>
+							</li>
+							<li>
+								<div id="log-in-out">
+									<a href="./index.php"><i class="fa fa-home"></i> Home </a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
 
 		<!-- include a header that shows up on every page except for the main page -->
 		<?php emptyblock('head') ?>
